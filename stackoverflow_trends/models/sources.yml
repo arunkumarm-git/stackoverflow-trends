@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: stackoverflow_public  # This is the name we'll use in our 'source' function
+    database: bigquery-public-data
+    schema: stackoverflow
+    tables:
+      - name: posts_questions
