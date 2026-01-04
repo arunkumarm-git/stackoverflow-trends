@@ -18,5 +18,5 @@ graph LR
     B -->|Extract Dates| C
     B -->|Unnest & Normalize| D
     C -->|Join Logic| E
-    D -->|Direct Query/Import| E
+    D -->|Import| E
 ```
