@@ -24,4 +24,4 @@ WITH source_data AS (
 )
 
 SELECT * FROM source_data
-WHERE MOD(ABS(FARM_FINGERPRINT(CONCAT(CAST(creation_date AS STRING), tags))), 10) < 3
+WHERE MOD(ABS(FARM_FINGERPRINT(CONCAT(CAST(creation_date AS STRING), tags, CAST(Score AS STRING)))), 10) < 3
