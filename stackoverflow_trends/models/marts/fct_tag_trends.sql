@@ -12,17 +12,17 @@ WITH stg_questions AS (
 
 unnested_tags AS (
     SELECT
-        creation_date,
-        CAST(FORMAT_DATE('%Y%m%d', DATE(creation_date)) AS INT64) AS date_key,
+        q.creation_date,
+        CAST(FORMAT_DATE('%Y%m%d', DATE(q.creation_date)) AS INT64) AS date_key,
         TRIM(tag_element) AS tag,
-        score,
-        view_count,
-        favorite_count,
-        comment_count,
-        answer_count,
-        answer_status
-    FROM stg_questions,
-    UNNEST(SPLIT(tags, '|')) AS tag_element
+        q.score,
+        q.view_count,
+        q.favorite_count,
+        q.comment_count,
+        q.answer_count,
+        q.answer_status
+    FROM stg_questions AS q
+    CROSS JOIN UNNEST(SPLIT(q.tags, '|')) AS tag_element
 )
 
 SELECT 
