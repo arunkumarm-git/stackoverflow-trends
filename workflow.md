@@ -1,6 +1,6 @@
 ```mermaid
 graph LR
-    subgraph "1. Source (Data Lake)"
+    subgraph "1. Source"
         A["BigQuery Public Dataset<br/>(bigquery-public-data.stackoverflow)"]
     end
 
